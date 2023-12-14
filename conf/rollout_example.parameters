@@ -1,0 +1,13 @@
+test_savedir logs
+num_actors 1
+num_rollouts 1000
+model_load_name nethack_files/model_115.tar
+sampling_type softmax
+top_p 0.90
+top_k 1
+temperature 1.0
+save_ttyrec_every 0
+rollout_penalty_step 0
+max_episode_steps 100000
+rollout_character @
+env NetHackChallenge-v0

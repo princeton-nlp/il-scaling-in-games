@@ -1,0 +1,16 @@
+[project]
+name = "il-scaling-laws"
+version = "0.1.0"
+description = 'Official Implementation of "Scaling Laws for Imitation Learning in NetHack"'
+readme = "README.md"
+requires-python = ">= 3.7"
+authors = [{ name = "Jens Tuyls", email = "jtuyls@cs.princeton.edu" }]
+keywords = ["imitation learning"]
+dynamic=["dependencies"]
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["."]  # list of folders that contain the packages (["."] by default)
