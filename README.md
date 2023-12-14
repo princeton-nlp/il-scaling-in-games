@@ -7,7 +7,7 @@ Please download the model weights for our forecasted NetHack experiment from the
 - Model weights: https://drive.google.com/file/d/1tWxA92qkat7Uee8SKMNsj-BV1K9ENExl/view?usp=share_link
 - Model flags: https://drive.google.com/file/d/1yyvbhq-yBF6q3lWCtfrIiyB1NdhTr5l2/view?usp=share_link
 
-Make sure to place these files in a folder named `nethack-files` in the root directory of this repo.
+Make sure to place these files in a folder named `nethack_files` in the root directory of this repo.
 
 NOTE: You can use `gdown` to download these using the command line. Simply install `gdown` using `pip install gdown` and then run the following commands:
 - `gdown 'https://drive.google.com/uc?id=1tWxA92qkat7Uee8SKMNsj-BV1K9ENExl'` for the model weights
