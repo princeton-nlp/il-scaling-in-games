@@ -14,13 +14,13 @@ from nle import nethack
 import numpy as np
 import scipy.stats as stats
 
-from il_scale.nethack.ddp_util import DDPUtil
-from il_scale.nethack.config import Config
-from il_scale.nethack.agent import Agent
-from il_scale.nethack.utils import (
+from il_scale.nethack.v1.ddp_util import DDPUtil
+from il_scale.nethack.v1.config import Config
+from il_scale.nethack.v1.agent import Agent
+from il_scale.nethack.v1.utils import (
     create_env,
 )
-from il_scale.nethack.resetting_env import ResettingEnvironment
+from il_scale.nethack.v1.resetting_env import ResettingEnvironment
 
 mp.set_sharing_strategy(
     "file_system"

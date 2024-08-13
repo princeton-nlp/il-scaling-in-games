@@ -9,8 +9,8 @@ from nle import nethack  # noqa: E402
 from nle.nethack.nethack import TERMINAL_SHAPE
 from transformers import TopPLogitsWarper, TopKLogitsWarper
 
-from il_scale.nethack.crop import Crop
-from il_scale.nethack.utils import interleave
+from il_scale.nethack.v1.crop import Crop
+from il_scale.nethack.v1.utils import interleave
 
 PAD_CHAR = 0
 NUM_CHARS = 256

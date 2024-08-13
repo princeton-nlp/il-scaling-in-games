@@ -4,8 +4,8 @@ from nle import nethack
 import torch
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from il_scale.nethack.config import Config
-from il_scale.nethack.net import NetHackNetTtyrec
+from il_scale.nethack.v1.config import Config
+from il_scale.nethack.v1.net import NetHackNetTtyrec
 
 
 class Agent:

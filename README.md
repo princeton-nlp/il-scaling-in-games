@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## Running the sample script
 Once everything is installed, you can simply run
 ```
-python3 -m il_scale.nethack.rollout --parameter_file conf/rollout_example.parameters
+python3 -m il_scale.nethack.v1.rollout --parameter_file conf/rollout_example.parameters
 ```
 The hyperparameters in `conf/rollout_example.parameters` are set to reproduce the numbers in the paper. You can also change the hyperparameters to run your own experiments.
 

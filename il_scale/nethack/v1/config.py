@@ -3,7 +3,7 @@ import logging
 
 import torch
 
-from il_scale.nethack.utils import assign_free_gpus
+from il_scale.nethack.v1.utils import assign_free_gpus
 
 
 class Config:
