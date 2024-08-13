@@ -1,0 +1,83 @@
+# @package _global_
+trainer:
+  log_freq: 200
+  total_samples: 1e11
+  train_time_budget: 1e30
+
+optimizer:
+  lr: 0.0002
+  optim_warmup_steps: 2000
+  lr_end_fraction: 0.1
+  scheduler_type: cosine
+
+data:
+  dataset_name: nld-aa-human-monk
+  batch_size: 2
+  unroll_length: 16384
+  workers: 30
+  env: NetHackChallenge-v0
+  use_inventory: true
+
+network:
+  # general hdim
+  hdim: 1024
+  inv_hdim: 256
+  inv_edim: 32
+  core_mode: mamba
+
+  # sequence model
+  mamba_num_layers: 24
+
+  # top encoding
+  msg_hdim: 64
+
+  # bottom encoding
+  blstats_hdim: 512
+
+  # misc
+  fc_after_cnn_hdim: 512
+  add_char_color: true
+  use_inventory: true
+  add_norm_after_linear: true
+  fix_initialization: false
+
+  # observation encoding
+  include_top_and_bottom: false
+  obs_kernel_size: 3
+  obs_conv_blocks: 2
+  obs_frame_stack: ${data.obs_frame_stack}
+  resnet_num_blocks: 2
+  resnet_num_layers: 2
+  resnet_num_fc_layers: 2
+  resnet_hdim: 512
+
+  # policy
+  policy_num_fc_layers: 2
+
+setup:
+  disable_cuda: false
+  num_gpus: 8
+
+  wandb_name: scale_mamba_h1024_l24_16k
+  wandb_mode: online
+
+# above is the config of the model
+rollout:
+  save_ttyrec_every: 0 # if set to 1 it means you're saving the ttyrecs to be watched later
+  rollout_save_dir: logs/nethack/rollouts
+  num_actors: 1 # only relevant when rolling out on cpu
+  num_rollouts: 10
+  model_load_name: mamba_model_100.tar
+  sampling_type: softmax
+  top_p: 0.90
+  top_k: 1
+  temperature: 1.0
+  rollout_penalty_step: 0
+  max_episode_steps: 1000000
+  rollout_character: mon-hum-neu-mal # @ for all characters
+  rollout_tag: test
+  env: NetHackChallenge-v0
+  use_gpu: true
+  num_gpus: 1
+  max_seqlen: 20000
+

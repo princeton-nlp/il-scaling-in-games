@@ -1,0 +1,112 @@
+hydra/hydra_logging: disabled
+hydra/job_logging: disabled
+
+trainer:
+  log_freq: 100
+  chkpt_freq: 1e9
+  save_dir: logs/nethack
+  total_samples: 1e12
+  train_time_budget: 1e9
+  gradient_acc: 1
+
+optimizer:
+  lr: 0.0001
+  optim_warmup_steps: 0
+  lr_end_fraction: 0.1
+  scheduler_type: constant
+
+data:
+  dataset_name: nld-aa-xl
+  batch_size: 104
+  unroll_length: 80
+  workers: 30
+  min_dlvl_reached: 1
+  use_bl_role: false
+  obs_frame_stack: 1
+  env: NetHackChallenge-v0
+  use_inventory: false
+
+network:
+  # general hdim
+  hdim: 1024
+  inv_hdim: 128
+  inv_edim: 16
+
+  # sequence model
+  mamba_num_layers: 24
+  tf_num_layers: 6
+  tf_num_heads: 4
+
+  # top encoding
+  msg_hdim: 64
+
+  # bottom encoding
+  blstats_hdim: 64
+
+  # misc
+  fc_after_cnn_hdim: 512
+  add_char_color: false
+  use_inventory: false
+  core_mode: mamba
+  fix_initialization: false
+  add_norm_after_linear: false
+
+  # observation encoding
+  include_top_and_bottom: false
+  obs_kernel_size: 3
+  obs_conv_blocks: 2
+  obs_frame_stack: ${data.obs_frame_stack}
+  resnet_num_blocks: 2
+  resnet_num_layers: 2
+  resnet_num_fc_layers: 2
+  resnet_hdim: 512
+  resnet_scale_channels: 1
+
+
+  # crop encoding
+  crop_padding: 1
+  crop_kernel_size: 3
+  crop_stride: 1
+  crop_inter_filters: 16
+  crop_out_filters: 8
+  crop_dim: 9
+  crop_num_layers: 5
+
+  # embedding encoding
+  char_edim: 16
+  color_edim: 16
+
+  # policy
+  policy_num_fc_layers: 2
+
+
+rollout:
+  save_ttyrec_every: 0
+  wandb_id: null
+  rollout_save_dir: logs/nethack/rollouts
+  num_actors: 1
+  num_rollouts: 1
+  model_load_name: model_latest
+  sampling_type: softmax
+  top_p: 0.90
+  top_k: 1
+  temperature: 1.0
+  rollout_penalty_step: 0
+  max_episode_steps: 100000
+  rollout_character: "@"
+  rollout_tag: test
+  env: NetHackChallenge-v0
+  use_gpu: false 
+  num_gpus: 1
+
+setup:
+  disable_cuda: false
+  num_gpus: 1
+  use_amp: false
+
+  wandb_name: nethack_test
+  wandb_mode: disabled
+  wandb_tag: null
+  wandb_id: null # for potentially resuming
+
+  model_load_name: null
