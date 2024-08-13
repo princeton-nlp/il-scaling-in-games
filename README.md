@@ -5,14 +5,13 @@ Official code repo for the paper "Scaling Laws for Imitation Learning in Single-
 ## Downloading NetHack Weights ⬇️
 
 Please download the model weights for our forecasted NetHack experiment from the following links:
-- LSTM (30M) model weights: https://drive.google.com/file/d/1tWxA92qkat7Uee8SKMNsj-BV1K9ENExl/view?usp=share_link
-- LSTM model flags: https://drive.google.com/file/d/1yyvbhq-yBF6q3lWCtfrIiyB1NdhTr5l2/view?usp=share_link
-- Mamba (~200M) model weights: https://drive.google.com/file/d/1LbgA-yTDOe3VDd3-iGHyJrh0FXgDKlJ3/view?usp=share_link
+- [LSTM (30M) model weights](https://drive.google.com/file/d/1tWxA92qkat7Uee8SKMNsj-BV1K9ENExl/view?usp=share_link), [LSTM model flags](https://drive.google.com/file/d/1yyvbhq-yBF6q3lWCtfrIiyB1NdhTr5l2/view?usp=share_link)
+- [Mamba (167M) model weights](https://drive.google.com/file/d/1LbgA-yTDOe3VDd3-iGHyJrh0FXgDKlJ3/view?usp=share_link)
 
 You can use `gdown` to download these using the command line. Simply install `gdown` using `pip install gdown` and then run the following commands:
-- `gdown 'https://drive.google.com/uc?id=1tWxA92qkat7Uee8SKMNsj-BV1K9ENExl'` for the LSTM model weights
-- `gdown 'https://drive.google.com/uc?id=1yyvbhq-yBF6q3lWCtfrIiyB1NdhTr5l2'` for the LSTM model flags
-- `gdown 'https://drive.google.com/uc?id=1LbgA-yTDOe3VDd3-iGHyJrh0FXgDKlJ3'` for the Mamba model weights
+- LSTM model: `gdown 'https://drive.google.com/uc?id=1tWxA92qkat7Uee8SKMNsj-BV1K9ENExl'`
+- LSTM flags: `gdown 'https://drive.google.com/uc?id=1yyvbhq-yBF6q3lWCtfrIiyB1NdhTr5l2'`
+- Mamba model: `gdown 'https://drive.google.com/uc?id=1LbgA-yTDOe3VDd3-iGHyJrh0FXgDKlJ3'`
 
 Make sure to place these files in a folder named `nethack_files` in the root directory of this repo.
 > [!NOTE]
