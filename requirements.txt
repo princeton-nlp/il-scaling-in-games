@@ -10,4 +10,5 @@ tqdm==4.66.1
 transformers==4.33.1
 wandb==0.15.4
 configargparse
+portalocker
 
