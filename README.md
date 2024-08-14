@@ -55,4 +55,12 @@ To run the Mamba model, you can run the following command:
 python3 -u -m il_scale.nethack.v2.rollout +nethack/rollouts=rollout_mamba
 ```
 
+## Training your own models 🏋️‍♂️
+To start training your own models, you can use the following command:
+```
+python3 -m il_scale.nethack.train_nethack_il +nethack/exp=train_sample
+```
+
+> [!INFO]
+> In order to successfully run the training script, you'll need to have a dataset of AutoAscend trajectories named `nld-aa-human-monk`. 
 

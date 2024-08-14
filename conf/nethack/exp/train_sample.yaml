@@ -1,0 +1,65 @@
+# @package _global_
+trainer:
+  total_samples: 1e9
+  log_freq: 5
+  total_samples: 1e11
+  train_time_budget: 1e30
+  gradient_acc: 2
+
+optimizer:
+  lr: 0.0002
+  optim_warmup_steps: 2000
+  lr_end_fraction: 0.1
+  scheduler_type: cosine
+
+data:
+  dataset_name: nld-aa-human-monk
+  batch_size: 2
+  unroll_length: 100
+  workers: 30
+  env: NetHackChallenge-v0
+  use_inventory: true
+
+network:
+  # general hdim
+  hdim: 1024
+  inv_hdim: 256
+  inv_edim: 32
+  core_mode: mamba
+
+  # sequence model
+  mamba_num_layers: 24
+
+  # top encoding
+  msg_hdim: 64
+
+  # bottom encoding
+  blstats_hdim: 512
+
+  # misc
+  fc_after_cnn_hdim: 512
+  add_char_color: true
+  use_inventory: true
+  add_norm_after_linear: true
+  fix_initialization: false
+
+  # observation encoding
+  include_top_and_bottom: false
+  obs_kernel_size: 3
+  obs_conv_blocks: 2
+  obs_frame_stack: ${data.obs_frame_stack}
+  resnet_num_blocks: 2
+  resnet_num_layers: 2
+  resnet_num_fc_layers: 2
+  resnet_hdim: 512
+
+  # policy
+  policy_num_fc_layers: 2
+
+setup:
+  disable_cuda: false
+  num_gpus: 1
+  use_amp: true
+
+  wandb_name: scale_mamba_h1024_l24_16k
+  wandb_mode: disabled
