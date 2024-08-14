@@ -58,7 +58,7 @@ python3 -u -m il_scale.nethack.v2.rollout +nethack/rollouts=rollout_mamba
 ## Training your own models 🏋️‍♂️
 To start training your own models, you can use the following command:
 ```
-python3 -m il_scale.nethack.train_nethack_il +nethack/exp=train_sample
+python3 -m il_scale.nethack.v2.train_nethack_il +nethack/exp=train_sample
 ```
 
 > [!TIP]

@@ -8,8 +8,8 @@ import nle.dataset as nld
 from nle.nethack.nethack import TERMINAL_SHAPE
 
 # Local application imports
-from il_scale.nethack.utils.setup import create_env
-import il_scale.nethack.utils.constants as CONSTANTS
+from il_scale.nethack.v2.utils.setup import create_env
+import il_scale.nethack.v2.utils.constants as CONSTANTS
 
 class TtyrecDataLoader:
     """

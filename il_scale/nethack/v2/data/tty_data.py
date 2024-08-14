@@ -7,8 +7,8 @@ import nle.dataset as nld
 import wandb
 from omegaconf import DictConfig
 
-import il_scale.nethack.utils.constants as CONSTANTS
-from il_scale.nethack.data.ttyrec_data_loader import TtyrecDataLoader
+import il_scale.nethack.v2.utils.constants as CONSTANTS
+from il_scale.nethack.v2.data.ttyrec_data_loader import TtyrecDataLoader
 
 class TTYData:
     def __init__(

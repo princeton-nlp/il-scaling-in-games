@@ -13,12 +13,12 @@ import hydra
 from omegaconf import DictConfig, OmegaConf
 
 # Local application imports
-from il_scale.nethack.utils.setup import DDPUtil, set_device
-from il_scale.nethack.utils.model import count_params
-from il_scale.nethack.agent import Agent
-from il_scale.nethack.data.tty_data import TTYData
-from il_scale.nethack.trainers.bc_trainer import BCTrainer
-from il_scale.nethack.logger import Logger
+from il_scale.nethack.v2.utils.setup import DDPUtil, set_device
+from il_scale.nethack.v2.utils.model import count_params
+from il_scale.nethack.v2.agent import Agent
+from il_scale.nethack.v2.data.tty_data import TTYData
+from il_scale.nethack.v2.trainers.bc_trainer import BCTrainer
+from il_scale.nethack.v2.logger import Logger
 
 logging.basicConfig(
     format=(
