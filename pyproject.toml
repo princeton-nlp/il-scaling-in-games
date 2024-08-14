@@ -1,7 +1,7 @@
 [project]
 name = "il-scaling-laws"
 version = "0.1.0"
-description = 'Official Implementation of "Scaling Laws for Imitation Learning in NetHack"'
+description = 'Official Implementation of "Scaling Laws for Imitation Learning in Single-Agent Games"'
 readme = "README.md"
 requires-python = ">= 3.7"
 authors = [{ name = "Jens Tuyls", email = "jtuyls@cs.princeton.edu" }]
