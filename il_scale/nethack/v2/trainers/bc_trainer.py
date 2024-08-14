@@ -7,12 +7,12 @@ import torch
 from torch import nn
 from omegaconf import DictConfig
 
-from il_scale.nethack.trainers.trainer import Trainer
-from il_scale.nethack.agent import Agent
-from il_scale.nethack.data.tty_data import TTYData
-from il_scale.nethack.utils.setup import DDPUtil
-from il_scale.nethack.utils.model import count_params
-from il_scale.nethack.logger import Logger
+from il_scale.nethack.v2.trainers.trainer import Trainer
+from il_scale.nethack.v2.agent import Agent
+from il_scale.nethack.v2.data.tty_data import TTYData
+from il_scale.nethack.v2.utils.setup import DDPUtil
+from il_scale.nethack.v2.utils.model import count_params
+from il_scale.nethack.v2.logger import Logger
 
 # A logger for this file
 logging.basicConfig(

@@ -9,10 +9,10 @@ from torch.optim.lr_scheduler import CosineAnnealingLR, SequentialLR
 from transformers import get_linear_schedule_with_warmup, get_constant_schedule_with_warmup
 from omegaconf import DictConfig, OmegaConf
 
-from il_scale.nethack.logger import Logger
-from il_scale.nethack.data.tty_data import TTYData
-from il_scale.nethack.utils.setup import DDPUtil
-from il_scale.nethack.utils.model import load_checkpoint
+from il_scale.nethack.v2.logger import Logger
+from il_scale.nethack.v2.data.tty_data import TTYData
+from il_scale.nethack.v2.utils.setup import DDPUtil
+from il_scale.nethack.v2.utils.model import load_checkpoint
 
 # A logger for this file
 logging.basicConfig(
