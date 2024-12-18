@@ -6,7 +6,6 @@ datasets/
 slurm_output/
 data_objects/
 *.pdf
-*.tar
 logs/
 nethack_files/
 
